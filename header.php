@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-
+<?php $options = get_option("pousada_options"); //var_dump($options);?>
 <html lang="en">
     <head>
         <title><?php echo get_bloginfo('name'); ?> | <?php echo get_bloginfo('description'); ?> </title>
@@ -49,7 +49,20 @@
                         <div class="py-1">
                             <div class="row align-items-center">
                                 <div class="col-4">
-                                    <h2 class="mb-0 site-logo"><a href="<?php echo get_site_url(); ?>"><?php echo get_bloginfo('name'); ?></a></h2>
+
+                                    <a href="<?php echo get_site_url(); ?>">
+                                        <?php
+                                        if (empty($options['callout_logo_site'])) {
+                                            echo '<h2 class="mb-0 site-logo">';
+                                            echo get_bloginfo('name');
+                                            echo ' </h2>';
+                                        } else {
+                                            echo "<img width='170' src='" . $options['callout_logo_site'] . "'/>";
+                                        };
+                                        ;
+                                        ?>
+                                    </a>
+
                                 </div>
                                 <div class="col-8">
                                     <nav class="site-navigation text-right" role="navigation">

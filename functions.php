@@ -192,7 +192,16 @@ function pousada_callout_customizer($wp_customize) {
                 'panel' => 'pousada__homecallout_setting',)
     );
 
+$wp_customize->add_setting('pousada_options[callout_logo_site]', array(
+        'sanitize_callback' => 'esc_url_raw',
+        'type' => 'option',
+    ));
 
+    $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'pousada_options[callout_logo_site]', array(
+                'label' => __('Site logo', 'pousada_'),
+                'section' => 'callout_section_settings',
+                'settings' => 'pousada_options[callout_logo_site]',
+    )));
 //Hide Home callout Section
 
     $wp_customize->add_setting(
