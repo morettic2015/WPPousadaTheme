@@ -192,7 +192,7 @@ function pousada_callout_customizer($wp_customize) {
                 'panel' => 'pousada__homecallout_setting',)
     );
 
-$wp_customize->add_setting('pousada_options[callout_logo_site]', array(
+    $wp_customize->add_setting('pousada_options[callout_logo_site]', array(
         'sanitize_callback' => 'esc_url_raw',
         'type' => 'option',
     ));
@@ -202,6 +202,21 @@ $wp_customize->add_setting('pousada_options[callout_logo_site]', array(
                 'section' => 'callout_section_settings',
                 'settings' => 'pousada_options[callout_logo_site]',
     )));
+    
+    $wp_customize->add_setting(
+            'pousada_options[home_logo_width]',
+            array(
+                'default' => __('170', 'pousada_'),
+                'capability' => 'edit_theme_options',
+                'sanitize_callback' => 'pousada__callout_sanitize_html',
+                'type' => 'option',
+            )
+    );
+    $wp_customize->add_control('pousada_options[home_logo_width]', array(
+        'label' => __('Logo Width', 'pousada_'),
+        'section' => 'callout_section_settings',
+        'type' => 'number',));
+    
 //Hide Home callout Section
 
     $wp_customize->add_setting(
@@ -363,7 +378,7 @@ $wp_customize->add_setting('pousada_options[callout_logo_site]', array(
         'section' => 'callout_section_settings',
         'type' => 'text',));
 
-    
+
     $wp_customize->add_setting(
             'pousada_options[home_tit1]',
             array(
@@ -377,8 +392,8 @@ $wp_customize->add_setting('pousada_options[callout_logo_site]', array(
         'label' => __('Title about', 'pousada_'),
         'section' => 'callout_section_settings',
         'type' => 'text',));
-    
-     $wp_customize->add_setting(
+
+    $wp_customize->add_setting(
             'pousada_options[home_tit2]',
             array(
                 'default' => 'Reprehen derit in voluptate velit cillum dolore eu fugiat nulla pariaturs sint occaecat proidentse.',
@@ -391,7 +406,7 @@ $wp_customize->add_setting('pousada_options[callout_logo_site]', array(
         'label' => __('Title apartments', 'pousada_'),
         'section' => 'callout_section_settings',
         'type' => 'text',));
-    
+
     $wp_customize->add_setting(
             'pousada_options[home_tit3]',
             array(
@@ -432,8 +447,8 @@ $wp_customize->add_setting('pousada_options[callout_logo_site]', array(
                 'section' => 'callout_purchase_now_settings',
                 'type' => 'text',
     ));
-    
-    
+
+
 
     /* $wp_customize->add_section(
       'callout_get_in_touch_settings',
@@ -505,9 +520,9 @@ $wp_customize->add_setting('pousada_options[callout_logo_site]', array(
             )
     );
 
-    
-    
-      $wp_customize->add_setting(
+
+
+    $wp_customize->add_setting(
             'pousada_options[home_whats_title]',
             array(
                 'default' => __('Purchase Now', 'pousada_'),
@@ -524,26 +539,26 @@ $wp_customize->add_setting('pousada_options[callout_logo_site]', array(
                 'section' => 'callout_purchase_now_settings',
                 'type' => 'text',
     ));
-    
-    //Whatsapp title
-  /*  $wp_customize->add_setting(
-            'pousada_options[home_whats_exc]',
-            array(
-                'default' => __('LIttle desc', 'pousada_'),
-                'capability' => 'edit_theme_options',
-                'sanitize_callback' => 'pousada__callout_sanitize_html',
-                'type' => 'option',
-            )
-    );
 
-    $wp_customize->add_control(
-            'pousada_options[home_whats_exc]',
-            array(
-                'label' => __('Whats intro...', 'pousada_'),
-                'section' => 'callout_purchase_now_settings',
-                'type' => 'text',
-    ));*/
-    
+    //Whatsapp title
+    /*  $wp_customize->add_setting(
+      'pousada_options[home_whats_exc]',
+      array(
+      'default' => __('LIttle desc', 'pousada_'),
+      'capability' => 'edit_theme_options',
+      'sanitize_callback' => 'pousada__callout_sanitize_html',
+      'type' => 'option',
+      )
+      );
+
+      $wp_customize->add_control(
+      'pousada_options[home_whats_exc]',
+      array(
+      'label' => __('Whats intro...', 'pousada_'),
+      'section' => 'callout_purchase_now_settings',
+      'type' => 'text',
+      )); */
+
     //Whatsapp title
     $wp_customize->add_setting(
             'pousada_options[home_whats_msg]',
@@ -562,7 +577,7 @@ $wp_customize->add_setting('pousada_options[callout_logo_site]', array(
                 'section' => 'callout_purchase_now_settings',
                 'type' => 'text',
     ));
-    
+
     //Whatsapp title
     $wp_customize->add_setting(
             'pousada_options[home_whats_nr]',
@@ -581,8 +596,8 @@ $wp_customize->add_setting('pousada_options[callout_logo_site]', array(
                 'section' => 'callout_purchase_now_settings',
                 'type' => 'number',
     ));
-    
-    
+
+
 // documentation area
     $wp_customize->add_setting(
             'pousada_options[home_call_out_btn2_text]',

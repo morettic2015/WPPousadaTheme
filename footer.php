@@ -41,7 +41,7 @@
             <div id="whatswidget-conversation" class="whatswidget-conversation" style="display: none; opacity: 0;">
                 <div class="whatswidget-conversation-header" style="all:revert;">
                     <div id="whatswidget-conversation-title" class="whatswidget-conversation-title" style="all:revert;;color:black">
-                        <?php echo $options['home_whats_title']; ?>
+                        <?php echo $options['home_whats_title']; ?> <div class="float-right" id="closeZapZap">X</div>
                     </div>
 
                 </div>
@@ -68,7 +68,9 @@
                 document.getElementById("whatswidget-conversation").style.display = "none";
                 document.getElementById("whatswidget-conversation").style.opacity = "0";
                 var button = document.getElementById("whatswidget-button");
+                var closeZapZap = document.getElementById('closeZapZap');
                 button.addEventListener("click", openChat);
+                closeZapZap.addEventListener("click", openChat);
                 var conversationMessageOuter = document.getElementById("whatswidget-conversation-message-outer");
                 conversationMessageOuter.addEventListener("click", openChat);
                 var chatOpen = !1;
@@ -79,7 +81,15 @@
         </div>
 </footer>
 </div>
-
+<style>
+    @media (min-width: 600px) 
+    {
+        .flagOn{
+            display: none;
+            visibility: hidden;
+        }
+    }
+</style>
 <script src="<?php echo get_template_directory_uri(); ?>/js/jquery-3.3.1.min.js"></script>
 <script src="<?php echo get_template_directory_uri(); ?>/js/jquery-migrate-3.0.1.min.js"></script>
 <script src="<?php echo get_template_directory_uri(); ?>/js/jquery-ui.js"></script>
@@ -96,6 +106,7 @@
 <script src="<?php echo get_template_directory_uri(); ?>/js/mediaelement-and-player.min.js"></script>
 
 <script src="<?php echo get_template_directory_uri(); ?>/js/main.js"></script>
+
 
 
 <script>

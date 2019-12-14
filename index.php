@@ -7,6 +7,11 @@
         <div class="container">
             <div class="row align-items-center justify-content-center">
                 <div class="col-md-7 text-center" data-aos="fade">
+                    <div class="flagOn">
+                        <center>
+                            <?php echo do_shortcode('[google-translator]'); ?>
+                        </center>
+                    </div>
 
                     <h1 class="mb-2"><?php echo $options['home_call_out_title']; ?></h1>
                     <h2 class="caption"><?php echo $options['home_call_out_description']; ?></h2>
@@ -19,6 +24,11 @@
         <div class="container">
             <div class="row align-items-center justify-content-center">
                 <div class="col-md-7 text-center" data-aos="fade">
+                    <div class="flagOn">
+                        <center>
+                            <?php echo do_shortcode('[google-translator]'); ?>
+                        </center>
+                    </div>
                     <h1 class="mb-2"><?php echo $options['home_call_out_title1']; ?></h1>
                     <h2 class="caption"><?php echo $options['home_call_out_description1']; ?></h2>
                 </div>
@@ -30,6 +40,11 @@
         <div class="container">
             <div class="row align-items-center justify-content-center">
                 <div class="col-md-7 text-center" data-aos="fade">
+                    <div class="flagOn">
+                        <center>
+                            <?php echo do_shortcode('[google-translator]'); ?>
+                        </center>
+                    </div>
                     <h1 class="mb-2"><?php echo $options['home_call_out_title2']; ?></h1>
                     <h2 class="caption"><?php echo $options['home_call_out_description2']; ?></h2>
                 </div>
@@ -45,7 +60,7 @@
 <div class="site-section bg-white" id="sobre">
     <div class="container">
         <div class="row align-items-center">
-            <div class="col-md-5 mb-5 mb-md-0">
+            <div class="col-md-6 mb-6 mb-md-0">
 
                 <div class="img-border">
                     <?php dynamic_sidebar('pic-about-widget-area'); ?>              
@@ -56,7 +71,11 @@
 
 
                 <div class="section-heading text-left ">
-                    <h2 class="mb-5"><?php echo $options['home_tit1']; ?></h2>
+                    <p>
+                    <h2 class="mb-lg-auto" style="margin-bottom: 20px">
+                        <?php echo $options['home_tit1']; ?>
+                    </h2>
+                    </p>
                 </div>
                 <p class="mb-4">
                     <?php echo $options['home_about']; ?>
@@ -103,9 +122,9 @@
         </div>
         <div class="row no-gutters">
             <div class="col-md-6 mx-auto text-center">
-            <center>
-                <?php dynamic_sidebar('gallery-widget-area'); ?>
-            </center>
+                <center>
+                    <?php dynamic_sidebar('gallery-widget-area'); ?>
+                </center>
             </div>
         </div>
     </div>

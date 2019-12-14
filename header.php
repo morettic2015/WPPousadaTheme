@@ -48,7 +48,7 @@
                     <div class="site-navbar bg-light">
                         <div class="py-1">
                             <div class="row align-items-center">
-                                <div class="col-4">
+                                <div class="col-2">
 
                                     <a href="<?php echo get_site_url(); ?>">
                                         <?php
@@ -57,14 +57,17 @@
                                             echo get_bloginfo('name');
                                             echo ' </h2>';
                                         } else {
-                                            echo "<img width='170' src='" . $options['callout_logo_site'] . "'/>";
+                                            
+                                            
+                                            $lgWidth = empty($options['home_logo_width'])?"170":$options['home_logo_width'];
+                                            echo "<img style='margin:10px!important' width='$lgWidth' src='" . $options['callout_logo_site'] . "'/>";
                                         };
                                         ;
                                         ?>
                                     </a>
 
                                 </div>
-                                <div class="col-8">
+                                <div class="col-10">
                                     <nav class="site-navigation text-right" role="navigation">
                                         <div class="container">
 
@@ -82,6 +85,7 @@
                                         </div>
                                     </nav>
                                 </div>
+                              
                             </div>
                         </div>
                     </div>
