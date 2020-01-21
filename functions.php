@@ -539,6 +539,8 @@ function pousada_callout_customizer($wp_customize) {
                 'section' => 'callout_purchase_now_settings',
                 'type' => 'text',
     ));
+    
+   
 
     //Whatsapp title
     /*  $wp_customize->add_setting(
@@ -608,7 +610,25 @@ function pousada_callout_customizer($wp_customize) {
                 'type' => 'option',
             )
     );
+    
+     $wp_customize->add_setting(
+            'pousada_options[whats_enabled]',
+            array(
+                'default' => __('Purchase Now', 'pousada_'),
+                'capability' => 'edit_theme_options',
+                'sanitize_callback' => 'pousada__callout_sanitize_html',
+                'type' => 'option',
+            )
+    );
 
+    $wp_customize->add_control(
+            'pousada_options[whats_enabled]',
+            array(
+                'label' => __('Whatsapp button visible??', 'pousada_'),
+                'section' => 'callout_purchase_now_settings',
+                'type' => 'checkbox',
+    ));
+    
     function pousada__callout_sanitize_html($input) {
         return force_balance_tags($input);
     }
@@ -616,3 +636,8 @@ function pousada_callout_customizer($wp_customize) {
 }
 
 add_action('customize_register', 'pousada_callout_customizer');
+/**
+ * a:23:{s:19:"home_call_out_title";s:28:"Venha desfrutar do paraíso!";s:25:"home_call_out_description";s:33:"De frente para a Ilha do Campeche";s:20:"home_call_out_title1";s:24:"Excelente localização!";s:26:"home_call_out_description1";s:51:"Apartamentos a 50m da maravilhosa Praia do Campeche";s:26:"home_call_out_description2";s:18:"Sua casa na praia!";s:10:"home_about";s:468:"A Pousada Praia Campeche está localizada em um dos mais belos pontos turísticos de Florianópolis, a Praia do Campeche, no sul da Ilha, a apenas 50 metros do mar. <br />A  Pousada Praia Campeche possui (08) apartamentos de um dormitório, mais (02) apartamentos de dois dormitórios, e (05) suítes.<br />Hospede-se em nossa pousada e desfrute os seus melhores dias na Ilha da Magia em um lugar aconchegante e especial, cercado por paisagens naturais incomparáveis.";s:9:"home_tit1";s:9:"A Pousada";s:9:"home_tit2";s:12:"Apartamentos";s:9:"home_tit3";s:18:"Galeria de Imagens";s:20:"home_call_out_title2";s:19:"Hospede-se conosco!";s:17:"callout_logo_site";s:95:"https://pousadapraiacampeche.com.br/wp-content/uploads/sites/22/2019/12/Logo-Pousada-escuro.png";s:18:"callout_background";s:100:"https://pousadapraiacampeche.com.br/wp-content/uploads/sites/22/2019/12/praia-e-ilha-do-campeche.jpg";s:19:"callout_background1";s:94:"https://pousadapraiacampeche.com.br/wp-content/uploads/sites/22/2019/12/praia-do-campeche2.jpg";s:19:"callout_background2";s:90:"https://pousadapraiacampeche.com.br/wp-content/uploads/sites/22/2019/12/fachada-1115-1.jpg";s:15:"home_logo_width";s:3:"170";s:14:"home_whats_msg";s:34:"Quero fazer uma reserva na pousada";s:23:"home_call_out_btn1_link";s:57:"https://pousadapraiacampeche.com.br/tarifario-e-reservas/";s:22:"callout_background_cta";s:94:"https://pousadapraiacampeche.com.br/wp-content/uploads/sites/22/2019/12/fachada-lateral222.jpg";s:23:"home_call_out_info_link";s:66:"Pacotes de Réveillon e Carnaval em até 3x no cartão de crédito";s:16:"home_whats_title";s:7:"Reserve";s:13:"home_whats_nr";s:13:"5548999724135";s:23:"home_call_out_btn1_text";s:8:"Consulte";s:13:"whats_enabled";s:0:"";}
+ * a:23:{s:19:"home_call_out_title";s:28:"Venha desfrutar do paraíso!";s:25:"home_call_out_description";s:33:"De frente para a Ilha do Campeche";s:20:"home_call_out_title1";s:24:"Excelente localização!";s:26:"home_call_out_description1";s:51:"Apartamentos a 50m da maravilhosa Praia do Campeche";s:26:"home_call_out_description2";s:18:"Sua casa na praia!";s:10:"home_about";s:468:"A Pousada Praia Campeche está localizada em um dos mais belos pontos turísticos de Florianópolis, a Praia do Campeche, no sul da Ilha, a apenas 50 metros do mar. <br />A  Pousada Praia Campeche possui (08) apartamentos de um dormitório, mais (02) apartamentos de dois dormitórios, e (05) suítes.<br />Hospede-se em nossa pousada e desfrute os seus melhores dias na Ilha da Magia em um lugar aconchegante e especial, cercado por paisagens naturais incomparáveis.";s:9:"home_tit1";s:9:"A Pousada";s:9:"home_tit2";s:12:"Apartamentos";s:9:"home_tit3";s:18:"Galeria de Imagens";s:20:"home_call_out_title2";s:19:"Hospede-se conosco!";s:17:"callout_logo_site";s:95:"https://pousadapraiacampeche.com.br/wp-content/uploads/sites/22/2019/12/Logo-Pousada-escuro.png";s:18:"callout_background";s:100:"https://pousadapraiacampeche.com.br/wp-content/uploads/sites/22/2019/12/praia-e-ilha-do-campeche.jpg";s:19:"callout_background1";s:94:"https://pousadapraiacampeche.com.br/wp-content/uploads/sites/22/2019/12/praia-do-campeche2.jpg";s:19:"callout_background2";s:90:"https://pousadapraiacampeche.com.br/wp-content/uploads/sites/22/2019/12/fachada-1115-1.jpg";s:15:"home_logo_width";s:3:"170";s:14:"home_whats_msg";s:34:"Quero fazer uma reserva na pousada";s:23:"home_call_out_btn1_link";s:57:"https://pousadapraiacampeche.com.br/tarifario-e-reservas/";s:22:"callout_background_cta";s:94:"https://pousadapraiacampeche.com.br/wp-content/uploads/sites/22/2019/12/fachada-lateral222.jpg";s:23:"home_call_out_info_link";s:66:"Pacotes de Réveillon e Carnaval em até 3x no cartão de crédito";s:16:"home_whats_title";s:7:"Reserve";s:13:"home_whats_nr";s:13:"5548999724135";s:23:"home_call_out_btn1_text";s:8:"Consulte";s:13:"whats_enabled";s:1:"1";}
+ * a:24:{s:19:"home_call_out_title";s:28:"Venha desfrutar do paraíso!";s:25:"home_call_out_description";s:33:"De frente para a Ilha do Campeche";s:20:"home_call_out_title1";s:24:"Excelente localização!";s:26:"home_call_out_description1";s:51:"Apartamentos a 50m da maravilhosa Praia do Campeche";s:26:"home_call_out_description2";s:18:"Sua casa na praia!";s:10:"home_about";s:468:"A Pousada Praia Campeche está localizada em um dos mais belos pontos turísticos de Florianópolis, a Praia do Campeche, no sul da Ilha, a apenas 50 metros do mar. <br />A  Pousada Praia Campeche possui (08) apartamentos de um dormitório, mais (02) apartamentos de dois dormitórios, e (05) suítes.<br />Hospede-se em nossa pousada e desfrute os seus melhores dias na Ilha da Magia em um lugar aconchegante e especial, cercado por paisagens naturais incomparáveis.";s:9:"home_tit1";s:9:"A Pousada";s:9:"home_tit2";s:12:"Apartamentos";s:9:"home_tit3";s:18:"Galeria de Imagens";s:20:"home_call_out_title2";s:19:"Hospede-se conosco!";s:17:"callout_logo_site";s:95:"https://pousadapraiacampeche.com.br/wp-content/uploads/sites/22/2019/12/Logo-Pousada-escuro.png";s:18:"callout_background";s:100:"https://pousadapraiacampeche.com.br/wp-content/uploads/sites/22/2019/12/praia-e-ilha-do-campeche.jpg";s:19:"callout_background1";s:94:"https://pousadapraiacampeche.com.br/wp-content/uploads/sites/22/2019/12/praia-do-campeche2.jpg";s:19:"callout_background2";s:90:"https://pousadapraiacampeche.com.br/wp-content/uploads/sites/22/2019/12/fachada-1115-1.jpg";s:15:"home_logo_width";s:3:"170";s:14:"home_whats_msg";s:34:"Quero fazer uma reserva na pousada";s:23:"home_call_out_btn1_link";s:57:"https://pousadapraiacampeche.com.br/tarifario-e-reservas/";s:22:"callout_background_cta";s:94:"https://pousadapraiacampeche.com.br/wp-content/uploads/sites/22/2019/12/fachada-lateral222.jpg";s:23:"home_call_out_info_link";s:66:"Pacotes de Réveillon e Carnaval em até 3x no cartão de crédito";s:16:"home_whats_title";s:7:"Reserve";s:13:"home_whats_nr";s:13:"5548999724135";s:23:"home_call_out_btn1_text";s:8:"Consulte";s:13:"whats_enabled";s:0:"";s:30:"home_call_out_btn1_link_target";s:1:"1";}
+ */

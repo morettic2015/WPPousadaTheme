@@ -14,7 +14,7 @@
 
             <!--
               <div class="col-md-4">
-            <?php dynamic_sidebar('fouth-footer-widget-area'); ?>
+            <?php //dynamic_sidebar('fouth-footer-widget-area'); ?>
             </div>
             -->
 
@@ -36,6 +36,8 @@
 
         </div>
     </div>
+    <?php if($options['whats_enabled']==="1"):?>
+    
     <div id="whatswidget-pre-wrapper" class="">
         <div id="whatswidget-widget-wrapper" class="whatswidget-widget-wrapper" style="all:revert;">
             <div id="whatswidget-conversation" class="whatswidget-conversation" style="display: none; opacity: 0;">
@@ -79,8 +81,9 @@
                 }
             </script>
         </div>
+    </div>
+        <?php endif; ?>
 </footer>
-</div>
 <style>
     @media (min-width: 600px) 
     {
@@ -90,6 +93,9 @@
         }
     }
 </style>
+<!-- 
+@TODO Refactoring para transformar em wp_register_script
+-->
 <script src="<?php echo get_template_directory_uri(); ?>/js/jquery-3.3.1.min.js"></script>
 <script src="<?php echo get_template_directory_uri(); ?>/js/jquery-migrate-3.0.1.min.js"></script>
 <script src="<?php echo get_template_directory_uri(); ?>/js/jquery-ui.js"></script>
